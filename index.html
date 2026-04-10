@@ -129,48 +129,47 @@
 <style>
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 :root {
-  --bordeaux: #7a1e38;
-  --bordeaux-dark: #5a1228;
-  --bordeaux-light: #fdf0f4;
-  --anthracite: #242424;
-  --anthracite-mid: #3d3d3d;
-  --ivoire: #f8f4ee;
-  --or: #c49a3c;
-  --or-light: #fdf8ef;
-  --texte: #333;
-  --gris-doux: #f5f3f0;
+  --rose: #c4928a;
+  --rose-pale: #f2e0db;
+  --champagne: #d4a96a;
+  --noir: #1a1a1a;
+  --creme: #fdf8f4;
+  --blanc: #ffffff;
+  --gris: #6b6b6b;
+  --rose-fonce: #8a5e55;
   --radius: 3px;
   --font: 'Georgia', 'Times New Roman', serif;
   --font-sans: system-ui, -apple-system, sans-serif;
 }
 html { scroll-behavior: smooth; }
-body { font-family: var(--font-sans); color: var(--texte); background: #fff; line-height: 1.65; }
+body { font-family: var(--font-sans); color: var(--gris); background: var(--blanc); line-height: 1.65; }
 
 /* === HEADER === */
 header {
   position: fixed; top: 0; left: 0; right: 0; z-index: 100;
-  background: var(--anthracite);
+  background: var(--blanc);
   display: flex; align-items: center; justify-content: space-between;
   padding: 0 5%;
   height: 64px;
-  border-bottom: 2px solid var(--bordeaux);
+  border-bottom: 1px solid var(--rose-pale);
+  box-shadow: 0 1px 8px rgba(0,0,0,.04);
 }
 .logo { display: flex; align-items: center; gap: 10px; text-decoration: none; }
 .logo svg { width: 36px; height: 36px; flex-shrink: 0; }
-.logo-text { font-family: var(--font); font-size: 1.05rem; font-weight: 400; color: var(--ivoire); letter-spacing: .03em; line-height: 1.2; }
-.logo-text span { display: block; font-size: .7rem; color: var(--or); letter-spacing: .12em; text-transform: uppercase; font-family: var(--font-sans); }
-nav { display: flex; gap: 28px; }
-nav a { text-decoration: none; color: #aaa; font-size: .85rem; letter-spacing: .06em; text-transform: uppercase; transition: color .2s; }
-nav a:hover { color: var(--or); }
-.nav-cta { background: var(--bordeaux) !important; color: #fff !important; padding: 6px 16px; border-radius: var(--radius); }
-.nav-cta:hover { background: var(--bordeaux-dark) !important; }
+.logo-text { font-family: var(--font); font-size: 1.05rem; font-weight: 400; color: var(--noir); letter-spacing: .03em; line-height: 1.2; }
+.logo-text span { display: block; font-size: .7rem; color: var(--champagne); letter-spacing: .12em; text-transform: uppercase; font-family: var(--font-sans); }
+nav { display: flex; gap: 28px; align-items: center; }
+nav a { text-decoration: none; color: var(--gris); font-size: .85rem; letter-spacing: .06em; text-transform: uppercase; transition: color .2s; }
+nav a:hover { color: var(--rose); }
+.nav-cta { background: var(--rose) !important; color: var(--blanc) !important; padding: 6px 16px; border-radius: var(--radius); }
+.nav-cta:hover { background: var(--rose-fonce) !important; }
 @media (max-width: 768px) { nav { display: none; } }
 
 /* === HERO === */
 .hero {
   margin-top: 64px;
   position: relative;
-  background: var(--anthracite);
+  background: #2a1a1a;
   min-height: 560px;
   display: flex; align-items: center;
   overflow: hidden;
@@ -179,7 +178,7 @@ nav a:hover { color: var(--or); }
   position: absolute; inset: 0;
   background-image: url('/images/hero.jpg');
   background-size: cover; background-position: center 30%;
-  opacity: .28;
+  opacity: .4;
 }
 .hero-content {
   position: relative; z-index: 1;
@@ -191,7 +190,7 @@ nav a:hover { color: var(--or); }
 .hero-tag {
   display: inline-block;
   font-size: .7rem; letter-spacing: .2em; text-transform: uppercase;
-  color: var(--or); border: 1px solid var(--or);
+  color: var(--champagne); border: 1px solid var(--champagne);
   padding: 4px 14px; margin-bottom: 24px;
   font-family: var(--font-sans);
 }
@@ -204,9 +203,9 @@ nav a:hover { color: var(--or); }
   margin-bottom: 20px;
   letter-spacing: -.01em;
 }
-.hero-content h1 em { color: var(--or); font-style: normal; }
+.hero-content h1 em { color: var(--champagne); font-style: normal; }
 .hero-sub {
-  color: #ccc;
+  color: #ddd;
   font-size: 1rem;
   margin-bottom: 36px;
   max-width: 520px;
@@ -214,201 +213,218 @@ nav a:hover { color: var(--or); }
 }
 .hero-ctas { display: flex; gap: 14px; justify-content: center; flex-wrap: wrap; }
 .btn-primary {
-  background: var(--bordeaux); color: #fff;
+  background: var(--rose); color: #fff;
   padding: 14px 32px; border-radius: var(--radius);
   text-decoration: none; font-size: .9rem; letter-spacing: .04em;
   transition: background .2s, transform .15s;
   font-family: var(--font-sans);
 }
-.btn-primary:hover { background: var(--bordeaux-dark); transform: translateY(-1px); }
+.btn-primary:hover { background: var(--rose-fonce); transform: translateY(-1px); }
 .btn-secondary {
   border: 1px solid rgba(255,255,255,.4); color: #fff;
   padding: 13px 28px; border-radius: var(--radius);
   text-decoration: none; font-size: .9rem;
   transition: border-color .2s, background .2s;
 }
-.btn-secondary:hover { border-color: var(--or); color: var(--or); }
+.btn-secondary:hover { border-color: var(--champagne); color: var(--champagne); }
 
 /* === PHOTO STRIP === */
 .photo-strip {
   display: grid; grid-template-columns: repeat(4, 1fr);
-  height: 240px; gap: 2px; overflow: hidden;
+  height: 240px; gap: 3px; overflow: hidden;
 }
 .photo-strip img { width: 100%; height: 100%; object-fit: cover; display: block; transition: transform .5s; }
 .photo-strip img:hover { transform: scale(1.05); }
 @media (max-width: 600px) { .photo-strip { grid-template-columns: repeat(2,1fr); height: 300px; } }
 
-/* === CHIFFRES CLÉS === */
+/* === CHIFFRES CLES === */
 .kpi-bar {
-  background: var(--ivoire);
+  background: var(--creme);
   display: flex; justify-content: center; flex-wrap: wrap;
-  gap: 0; border-bottom: 1px solid #e8e0d6;
+  gap: 0; border-bottom: 1px solid #e8ddd6;
 }
 .kpi-item {
   padding: 28px 40px;
   text-align: center;
-  border-right: 1px solid #e8e0d6;
+  border-right: 1px solid #e8ddd6;
 }
 .kpi-item:last-child { border-right: none; }
 .kpi-num {
   font-family: var(--font);
-  font-size: 2rem; color: var(--bordeaux);
+  font-size: 2rem; color: var(--rose);
   display: block; line-height: 1;
   margin-bottom: 4px;
 }
-.kpi-label { font-size: .8rem; color: #888; text-transform: uppercase; letter-spacing: .08em; }
-@media (max-width: 600px) { .kpi-item { padding: 20px 24px; border-right: none; border-bottom: 1px solid #e8e0d6; width: 50%; } }
+.kpi-label { font-size: .8rem; color: #999; text-transform: uppercase; letter-spacing: .08em; }
+@media (max-width: 600px) { .kpi-item { padding: 20px 24px; border-right: none; border-bottom: 1px solid #e8ddd6; width: 50%; } }
 
 /* === SECTIONS === */
 section { padding: 80px 5%; }
 .section-tag {
   display: inline-block;
   font-size: .68rem; letter-spacing: .2em; text-transform: uppercase;
-  color: var(--bordeaux); margin-bottom: 10px;
+  color: var(--rose); margin-bottom: 10px;
   font-family: var(--font-sans);
 }
 h2 {
   font-family: var(--font);
   font-size: clamp(1.6rem, 3vw, 2.4rem);
-  font-weight: 400; color: var(--anthracite);
+  font-weight: 400; color: var(--noir);
   line-height: 1.2; margin-bottom: 24px;
   max-width: 720px;
 }
 .text-block { max-width: 800px; }
-.text-block p { margin-bottom: 18px; color: #555; line-height: 1.75; }
+.text-block p { margin-bottom: 18px; color: var(--gris); line-height: 1.75; }
 .text-block p:last-child { margin-bottom: 0; }
 
 /* === INTRO SEO === */
-.intro { background: #fff; }
+.intro { background: var(--blanc); }
 .intro-inner { max-width: 1100px; margin: 0 auto; display: grid; grid-template-columns: 1fr 1fr; gap: 60px; align-items: start; }
 .intro-text h2 { margin-bottom: 20px; }
-.intro-side { padding-top: 8px; }
-.intro-side h3 { font-family: var(--font); font-size: 1.15rem; color: var(--bordeaux); margin-bottom: 14px; font-weight: 400; }
+.intro-side {
+  padding: 28px 24px;
+  background: var(--rose-pale);
+  border-left: 3px solid var(--champagne);
+  border-radius: var(--radius);
+}
+.intro-side h3 { font-family: var(--font); font-size: 1.15rem; color: var(--noir); margin-bottom: 14px; font-weight: 400; }
 .intro-side ul { list-style: none; display: flex; flex-direction: column; gap: 10px; }
-.intro-side li { padding-left: 18px; position: relative; color: #555; font-size: .93rem; }
-.intro-side li::before { content: '—'; position: absolute; left: 0; color: var(--or); }
+.intro-side li { padding-left: 18px; position: relative; color: var(--gris); font-size: .93rem; }
+.intro-side li::before { content: '\2014'; position: absolute; left: 0; color: var(--champagne); }
 @media (max-width: 800px) { .intro-inner { grid-template-columns: 1fr; gap: 32px; } }
 
 /* === GAMMES === */
-.gammes { background: var(--gris-doux); }
+.gammes { background: var(--creme); }
 .gammes-inner { max-width: 1200px; margin: 0 auto; }
 .gammes-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 2px; margin-top: 40px; }
 .gamme-card {
-  background: #fff;
+  background: var(--blanc);
   padding: 32px 28px;
   position: relative;
-  transition: box-shadow .25s;
+  border-top: 3px solid transparent;
+  transition: box-shadow .25s, border-color .25s;
 }
-.gamme-card:hover { box-shadow: 0 8px 32px rgba(0,0,0,.1); z-index: 1; }
-.gamme-num {
-  font-family: var(--font);
-  font-size: 3.5rem;
-  color: var(--bordeaux-light);
-  line-height: 1;
-  position: absolute;
-  top: 16px; right: 20px;
-  font-weight: 700;
-  pointer-events: none;
+.gamme-card::before {
+  content: '';
+  display: block;
+  width: 40px;
+  height: 3px;
+  background: var(--champagne);
+  margin-bottom: 18px;
+  border-radius: 2px;
 }
-.gamme-card h3 { font-family: var(--font); font-size: 1.2rem; color: var(--anthracite); font-weight: 400; margin-bottom: 12px; }
-.gamme-card p { font-size: .88rem; color: #666; line-height: 1.65; margin-bottom: 16px; }
-.gamme-prix { font-size: .78rem; color: var(--bordeaux); font-family: var(--font-sans); letter-spacing: .04em; text-transform: uppercase; }
+.gamme-card:hover { box-shadow: 0 8px 32px rgba(0,0,0,.07); border-top-color: var(--rose); z-index: 1; }
+.gamme-card h3 { font-family: var(--font); font-size: 1.2rem; color: var(--noir); font-weight: 400; margin-bottom: 12px; }
+.gamme-card p { font-size: .88rem; color: var(--gris); line-height: 1.65; margin-bottom: 16px; }
+.gamme-prix { font-size: .78rem; color: var(--rose); font-family: var(--font-sans); letter-spacing: .04em; text-transform: uppercase; }
 @media (max-width: 900px) { .gammes-grid { grid-template-columns: repeat(2,1fr); } }
 @media (max-width: 560px) { .gammes-grid { grid-template-columns: 1fr; } }
 
-/* === SAISONNALITÉ === */
-.saisons { background: var(--bordeaux); padding: 0; overflow: hidden; }
+/* === SAISONNALITE === */
+.saisons { background: var(--creme); padding: 0; overflow: hidden; }
 .saisons-inner { max-width: 1200px; margin: 0 auto; display: grid; grid-template-columns: 1fr 1fr; }
 .saison-text { padding: 80px 60px 80px 5%; }
-.saison-text h2 { color: #fff; max-width: none; }
-.saison-text p { color: rgba(255,255,255,.75); margin-bottom: 16px; }
+.saison-text h2 { color: var(--noir); max-width: none; }
+.saison-text p { color: var(--gris); margin-bottom: 16px; }
 .saison-list { margin-top: 28px; display: flex; flex-direction: column; gap: 16px; }
 .saison-item { display: flex; gap: 16px; align-items: flex-start; }
-.saison-month { font-family: var(--font); font-size: 1.4rem; color: var(--or); min-width: 60px; }
-.saison-desc { color: rgba(255,255,255,.8); font-size: .88rem; line-height: 1.55; padding-top: 4px; }
+.saison-month { font-family: var(--font); font-size: 1.4rem; color: var(--champagne); min-width: 60px; }
+.saison-desc { color: var(--gris); font-size: .88rem; line-height: 1.55; padding-top: 4px; }
 .saison-visual {
   background: url('/images/strip2.jpg') center/cover;
   min-height: 400px;
-  opacity: .5;
+  opacity: 1;
 }
 @media (max-width: 800px) { .saisons-inner { grid-template-columns: 1fr; } .saison-visual { display: none; } .saison-text { padding: 60px 5%; } }
 
 /* === TARIFS === */
-.tarifs { background: #fff; }
+.tarifs { background: var(--blanc); }
 .tarifs-inner { max-width: 800px; margin: 0 auto; }
 .tarifs-table { width: 100%; border-collapse: collapse; margin-top: 36px; }
 .tarifs-table th {
-  background: var(--anthracite); color: var(--or);
+  background: var(--rose); color: var(--blanc);
   padding: 12px 20px; text-align: left;
   font-size: .78rem; text-transform: uppercase; letter-spacing: .1em;
   font-family: var(--font-sans); font-weight: 400;
 }
-.tarifs-table td { padding: 14px 20px; border-bottom: 1px solid #eee; font-size: .9rem; }
-.tarifs-table tr:hover td { background: var(--bordeaux-light); }
-.tarifs-table td:first-child { font-family: var(--font); font-size: 1.1rem; color: var(--bordeaux); }
-.tarifs-table td:last-child { font-weight: 600; color: var(--anthracite); }
-.tarifs-note { font-size: .83rem; color: #888; margin-top: 16px; }
+.tarifs-table td { padding: 14px 20px; border-bottom: 1px solid #eee; font-size: .9rem; color: var(--gris); }
+.tarifs-table tr:hover td { background: var(--rose-pale); }
+.tarifs-table td:first-child { font-family: var(--font); font-size: 1.1rem; color: var(--rose); }
+.tarifs-table td:last-child { font-weight: 600; color: var(--noir); }
+.tarifs-note { font-size: .83rem; color: #999; margin-top: 16px; }
 
 /* === DIFF === */
-.diff { background: var(--or-light); }
+.diff { background: var(--blanc); }
 .diff-inner { max-width: 1100px; margin: 0 auto; display: grid; grid-template-columns: repeat(3,1fr); gap: 40px; }
-.diff-item h3 { font-family: var(--font); font-size: 1.05rem; font-weight: 400; color: var(--anthracite); margin-bottom: 10px; }
-.diff-item p { font-size: .88rem; color: #666; line-height: 1.65; }
-.diff-num { font-family: var(--font); font-size: 3rem; color: #e8d8b5; line-height: 1; margin-bottom: 8px; }
+.diff-item {
+  padding-left: 20px;
+  border-left: 3px solid var(--champagne);
+}
+.diff-item h3 { font-family: var(--font); font-size: 1.05rem; font-weight: 400; color: var(--noir); margin-bottom: 10px; }
+.diff-item p { font-size: .88rem; color: var(--gris); line-height: 1.65; }
 @media (max-width: 720px) { .diff-inner { grid-template-columns: 1fr; gap: 28px; } }
 
 /* === SEGMENTS === */
-.segments { background: var(--gris-doux); }
+.segments { background: var(--creme); }
 .segments-inner { max-width: 1100px; margin: 0 auto; }
 .segments-grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 16px; margin-top: 36px; }
 .seg-card {
-  background: #fff; padding: 24px;
-  border-left: 3px solid var(--bordeaux);
+  background: var(--blanc); padding: 24px;
+  border-left: 3px solid var(--champagne);
 }
-.seg-card h3 { font-family: var(--font); font-size: 1rem; font-weight: 400; color: var(--anthracite); margin-bottom: 8px; }
-.seg-card p { font-size: .84rem; color: #666; }
+.seg-card h3 { font-family: var(--font); font-size: 1rem; font-weight: 400; color: var(--noir); margin-bottom: 8px; }
+.seg-card p { font-size: .84rem; color: var(--gris); }
 @media (max-width: 720px) { .segments-grid { grid-template-columns: repeat(2,1fr); } }
 @media (max-width: 480px) { .segments-grid { grid-template-columns: 1fr; } }
 
 /* === TEMOIGNAGES === */
-.temoignages { background: var(--anthracite); }
-.temoignages h2 { color: #fff; }
-.temoignages .section-tag { color: var(--or); }
+.temoignages { background: var(--creme); }
+.temoignages h2 { color: var(--noir); }
+.temoignages .section-tag { color: var(--rose); }
 .temos-grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 24px; margin-top: 40px; max-width: 1100px; }
 .temo {
-  background: var(--anthracite-mid);
+  background: var(--blanc);
   padding: 28px;
-  border-top: 2px solid var(--bordeaux);
+  border-top: 3px solid var(--champagne);
+  border-radius: var(--radius);
+  box-shadow: 0 2px 12px rgba(0,0,0,.04);
 }
-.temo-text { font-size: .9rem; color: #ccc; line-height: 1.7; margin-bottom: 20px; font-style: italic; }
-.temo-author { font-size: .8rem; color: var(--or); letter-spacing: .04em; }
-.temo-stars { color: var(--or); font-size: .85rem; margin-bottom: 12px; }
+.temo-text { font-size: .9rem; color: var(--gris); line-height: 1.7; margin-bottom: 20px; font-style: italic; }
+.temo-author { font-size: .8rem; color: var(--rose); letter-spacing: .04em; }
+.temo-stars { color: var(--champagne); font-size: .85rem; margin-bottom: 12px; }
 @media (max-width: 720px) { .temos-grid { grid-template-columns: 1fr; } }
 
 /* === FAQ === */
-.faq { background: var(--ivoire); }
+.faq { background: var(--blanc); }
 .faq-inner { max-width: 780px; margin: 0 auto; }
-.faq-item { border-bottom: 1px solid #ddd; }
+.faq-item { border-bottom: 1px solid #e8e0d6; }
 .faq-q {
   width: 100%; background: none; border: none; cursor: pointer;
   display: flex; justify-content: space-between; align-items: center;
   padding: 20px 0; text-align: left;
-  font-size: .95rem; color: var(--anthracite);
+  font-size: .95rem; color: var(--noir);
   font-family: var(--font-sans);
 }
-.faq-q:hover { color: var(--bordeaux); }
-.faq-icon { font-size: 1.4rem; color: var(--bordeaux); transition: transform .3s; flex-shrink: 0; margin-left: 16px; }
+.faq-q:hover { color: var(--rose); }
+.faq-icon { font-size: 1.4rem; color: var(--rose); transition: transform .3s; flex-shrink: 0; margin-left: 16px; }
 .faq-item.open .faq-icon { transform: rotate(45deg); }
-.faq-a { display: none; padding: 0 0 20px; font-size: .9rem; color: #555; line-height: 1.75; }
+.faq-a { display: none; padding: 0 0 20px; font-size: .9rem; color: var(--gris); line-height: 1.75; }
 .faq-item.open .faq-a { display: block; }
 
 /* === CONTACT === */
-.contact { background: #fff; }
+.contact { background: var(--rose-pale); }
 .contact-inner { max-width: 1000px; margin: 0 auto; display: grid; grid-template-columns: 1fr 1fr; gap: 60px; align-items: start; }
-.contact-text p { color: #555; margin-bottom: 16px; }
+.contact-text p { color: var(--gris); margin-bottom: 16px; }
 .contact-info { display: flex; flex-direction: column; gap: 12px; margin-top: 28px; }
-.contact-info a { color: var(--bordeaux); text-decoration: none; font-size: .9rem; }
-form { display: flex; flex-direction: column; gap: 14px; }
+.contact-info a { color: var(--rose-fonce); text-decoration: none; font-size: .9rem; }
+.contact-info a:hover { color: var(--rose); }
+form {
+  display: flex; flex-direction: column; gap: 14px;
+  background: var(--blanc);
+  padding: 28px;
+  border-radius: var(--radius);
+  box-shadow: 0 2px 16px rgba(0,0,0,.05);
+}
 .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; }
 input, textarea, select {
   border: 1px solid #ddd; border-radius: var(--radius);
@@ -416,31 +432,30 @@ input, textarea, select {
   transition: border-color .2s;
   width: 100%;
 }
-input:focus, textarea:focus, select:focus { outline: none; border-color: var(--bordeaux); }
+input:focus, textarea:focus, select:focus { outline: none; border-color: var(--rose); }
 textarea { min-height: 120px; resize: vertical; }
-.form-note { font-size: .8rem; color: #888; }
+.form-note { font-size: .8rem; color: #999; }
 .btn-submit {
-  background: var(--bordeaux); color: #fff;
+  background: var(--rose); color: var(--blanc);
   border: none; cursor: pointer;
   padding: 13px 28px; border-radius: var(--radius);
   font-size: .9rem; font-family: inherit;
   transition: background .2s; align-self: flex-start;
   letter-spacing: .04em;
 }
-.btn-submit:hover { background: var(--bordeaux-dark); }
+.btn-submit:hover { background: var(--rose-fonce); }
 @media (max-width: 700px) { .contact-inner { grid-template-columns: 1fr; gap: 36px; } .form-row { grid-template-columns: 1fr; } }
 
 /* === FOOTER === */
 footer {
-  background: var(--anthracite);
-  color: #888; font-size: .8rem;
+  background: var(--rose-fonce);
+  color: rgba(255,255,255,.7); font-size: .8rem;
   padding: 36px 5%;
   display: flex; justify-content: space-between; align-items: center;
   flex-wrap: wrap; gap: 12px;
-  border-top: 2px solid var(--bordeaux);
 }
-footer a { color: #888; text-decoration: none; }
-footer a:hover { color: var(--or); }
+footer a { color: rgba(255,255,255,.7); text-decoration: none; }
+footer a:hover { color: var(--blanc); }
 .footer-links { display: flex; gap: 20px; flex-wrap: wrap; }
 </style>
 </head>
@@ -451,16 +466,16 @@ footer a:hover { color: var(--or); }
   <a href="/" class="logo" aria-label="Grossiste Robes France">
     <svg viewBox="0 0 36 36" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
       <!-- Cintre -->
-      <path d="M18 6 Q24 6 24 10 L24 11" stroke="#c49a3c" stroke-width="1.5" fill="none" stroke-linecap="round"/>
-      <circle cx="18" cy="5.5" r="1.2" fill="#c49a3c"/>
+      <path d="M18 6 Q24 6 24 10 L24 11" stroke="#d4a96a" stroke-width="1.5" fill="none" stroke-linecap="round"/>
+      <circle cx="18" cy="5.5" r="1.2" fill="#d4a96a"/>
       <!-- Robe silhouette -->
-      <path d="M10 11 L8 14 L12 14 L10 30 L26 30 L24 14 L28 14 L26 11 Z" fill="#7a1e38"/>
+      <path d="M10 11 L8 14 L12 14 L10 30 L26 30 L24 14 L28 14 L26 11 Z" fill="#c4928a"/>
       <!-- Encolure -->
-      <path d="M14 11 Q18 14 22 11" fill="#5a1228"/>
-      <!-- Taille marquée -->
-      <line x1="11" y1="20" x2="25" y2="20" stroke="#c49a3c" stroke-width=".8" opacity=".6"/>
-      <!-- Col / décoration -->
-      <path d="M14 14 Q18 17 22 14" stroke="#c49a3c" stroke-width="1" fill="none" opacity=".6"/>
+      <path d="M14 11 Q18 14 22 11" fill="#8a5e55"/>
+      <!-- Taille marquee -->
+      <line x1="11" y1="20" x2="25" y2="20" stroke="#d4a96a" stroke-width=".8" opacity=".6"/>
+      <!-- Col / decoration -->
+      <path d="M14 14 Q18 17 22 14" stroke="#d4a96a" stroke-width="1" fill="none" opacity=".6"/>
     </svg>
     <span class="logo-text">Grossiste<br><span>Robes France</span></span>
   </a>
@@ -535,37 +550,31 @@ footer a:hover { color: var(--or); }
     <h2>Six gammes, du quotidien au grand soir</h2>
     <div class="gammes-grid" id="catalogue">
       <div class="gamme-card">
-        <div class="gamme-num">01</div>
         <h3>Robes casual & quotidien</h3>
         <p>Viscose fluidifiée, jersey coton, crêpe léger. Les modèles qui tournent tout au long de l'année : robes chemise, robes t-shirt, robes mi-longues portables en toute saison. Du XS au XXL en standard.</p>
         <div class="gamme-prix">À partir de 9,50 € HT / pièce</div>
       </div>
       <div class="gamme-card">
-        <div class="gamme-num">02</div>
         <h3>Robes d'été & plage</h3>
         <p>Gaze de coton, lin froissé, popeline imprimée. Broderies artisanales, imprimés fleuris et ethniques. Les meilleures marges pour les boutiques saisonnières — renouvellement mensuel sur cette gamme.</p>
         <div class="gamme-prix">À partir de 11,00 € HT / pièce</div>
       </div>
       <div class="gamme-card">
-        <div class="gamme-num">03</div>
         <h3>Robes de soirée & cocktail</h3>
         <p>Crêpe de polyester, satin mat, dentelle stretch. Longueurs genou à maxi. Modèles intemporels que les boutiques renouvellent peu, mais qui constituent le cœur d'un rayon formel solide.</p>
         <div class="gamme-prix">À partir de 18,00 € HT / pièce</div>
       </div>
       <div class="gamme-card">
-        <div class="gamme-num">04</div>
         <h3>Robes de cérémonie & mariage</h3>
         <p>Pour les wedding planners et les boutiques spécialisées. Robes mariée civile, demoiselles d'honneur, invitées. Pas de délai sur la cérémonie — ces modèles sont en stock permanent, disponibles dès 6 pièces.</p>
         <div class="gamme-prix">À partir de 29,00 € HT / pièce</div>
       </div>
       <div class="gamme-card">
-        <div class="gamme-num">05</div>
         <h3>Robes grande taille</h3>
         <p>Du 42 au 56, les mêmes modèles que le reste du catalogue — pas une gamme parallèle avec des coloris réduits. Coupes adaptées taille par taille, pas une simple mise à l'échelle. Compositions identiques, finitions identiques.</p>
         <div class="gamme-prix">À partir de 10,00 € HT / pièce</div>
       </div>
       <div class="gamme-card">
-        <div class="gamme-num">06</div>
         <h3>Robes enfant & fille</h3>
         <p>De 2 à 16 ans. Collections coordonnées parent-enfant disponibles sur sélection. Matières certifiées Oeko-Tex, sans colorants irritants. Idéal pour les boutiques mixtes enfant/maman ou les e-commerçants spécialisés.</p>
         <div class="gamme-prix">À partir de 7,50 € HT / pièce</div>
@@ -574,11 +583,11 @@ footer a:hover { color: var(--or); }
   </div>
 </section>
 
-<!-- SAISONNALITÉ -->
+<!-- SAISONNALITE -->
 <section class="saisons" style="padding:0;">
   <div class="saisons-inner">
     <div class="saison-text">
-      <span class="section-tag" style="color:var(--or);">Renouvellement</span>
+      <span class="section-tag">Renouvellement</span>
       <h2>Collections qui tournent avec le marché</h2>
       <p>Un grossiste mode qui sort des nouvelles références deux fois par an ne peut pas vous aider à garder un rayon frais. Notre calendrier de renouvellement est calé sur le rythme réel des boutiques.</p>
       <div class="saison-list">
@@ -609,7 +618,7 @@ footer a:hover { color: var(--or); }
   <div class="tarifs-inner">
     <span class="section-tag">Tarification</span>
     <h2>Tarifs dégressifs — transparents dès le premier contact</h2>
-    <p style="color:#666; margin-bottom:4px;">Les prix affichés sont HT. Le dégressif s'applique par modèle, pas en cumulé — chaque ligne de commande est indépendante.</p>
+    <p style="color:var(--gris); margin-bottom:4px;">Les prix affichés sont HT. Le dégressif s'applique par modèle, pas en cumulé — chaque ligne de commande est indépendante.</p>
     <table class="tarifs-table">
       <thead>
         <tr>
@@ -631,24 +640,21 @@ footer a:hover { color: var(--or); }
   </div>
 </section>
 
-<!-- DIFFÉRENCIATEURS -->
+<!-- DIFFERENCIATEURS -->
 <section class="diff">
   <div style="max-width:1100px; margin:0 auto;">
     <span class="section-tag">Nos engagements</span>
     <h2>Ce que les autres ne font pas</h2>
     <div class="diff-inner" style="margin-top:36px;">
       <div class="diff-item">
-        <div class="diff-num">I.</div>
         <h3>Stock vérifié avant chaque commande</h3>
         <p>Le catalogue en ligne reflète le stock réel au moment de la commande. Aucun modèle "disponible sur commande" caché derrière une fiche active — si c'est listé, c'est en entrepôt.</p>
       </div>
       <div class="diff-item">
-        <div class="diff-num">II.</div>
         <h3>Fiches produit complètes, pas commerciales</h3>
         <p>Composition textile exacte, grammage, guide des tailles par modèle, instructions d'entretien. Les informations dont vos clientes auront besoin — pas du copywriting produit générique.</p>
       </div>
       <div class="diff-item">
-        <div class="diff-num">III.</div>
         <h3>Minimum par modèle, liberté totale sur le mix</h3>
         <p>6 pièces par modèle, sans contrainte de panier global. Vous pouvez commander 6 robes d'été + 6 de soirée + 6 casual : trois minimums, pas d'obligation de "remplir" une commande.</p>
       </div>
@@ -690,7 +696,7 @@ footer a:hover { color: var(--or); }
   </div>
 </section>
 
-<!-- TÉMOIGNAGES -->
+<!-- TEMOIGNAGES -->
 <section class="temoignages">
   <span class="section-tag">Avis clients</span>
   <h2>Ce qu'en disent nos revendeurs</h2>
@@ -714,7 +720,7 @@ footer a:hover { color: var(--or); }
 </section>
 
 <!-- FAQ -->
-<section class="faq">
+<section class="faq" id="faq">
   <div class="faq-inner">
     <span class="section-tag">Questions fréquentes</span>
     <h2>Ce que les acheteurs nous demandent en premier</h2>
@@ -766,7 +772,7 @@ footer a:hover { color: var(--or); }
       <div class="contact-info">
         <a href="mailto:adv@grossiste-robes.fr">adv@grossiste-robes.fr</a>
         <a href="tel:+33180000000">01 80 00 00 00</a>
-        <span style="color:#888; font-size:.85rem;">Lun–Ven 9h–18h</span>
+        <span style="color:#999; font-size:.85rem;">Lun–Ven 9h–18h</span>
       </div>
     </div>
     <form action="mailto:adv@grossiste-robes.fr" method="post" enctype="text/plain">
