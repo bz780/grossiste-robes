@@ -484,6 +484,8 @@ footer a { color: rgba(255,255,255,.7); text-decoration: none; }
 footer a:hover { color: var(--blanc); }
 .footer-links { display: flex; gap: 20px; flex-wrap: wrap; }
 </style>
+<link rel="preload" as="image" href="/images/hero.jpg" fetchpriority="high">
+<!--email_off-->
 </head>
 <body>
 
@@ -513,6 +515,7 @@ footer a:hover { color: var(--blanc); }
   </nav>
 </header>
 
+<main>
 <!-- HERO -->
 <div class="hero">
   <div class="hero-bg"></div>
@@ -825,6 +828,8 @@ footer a:hover { color: var(--blanc); }
   </div>
 </section>
 
+</main>
+
 <!-- FOOTER -->
 <footer>
   <div>© 2026 grossiste-robes.fr — Tous droits réservés</div>
@@ -846,5 +851,6 @@ document.querySelectorAll('.faq-q').forEach(btn => {
   });
 });
 </script>
+<!--/email_off-->
 </body>
 </html>
