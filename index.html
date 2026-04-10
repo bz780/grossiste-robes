@@ -169,7 +169,7 @@ nav a:hover { color: var(--rose); }
 .hero {
   margin-top: 64px;
   position: relative;
-  background: #2a1a1a;
+  background: #1a1a1a;
   min-height: 560px;
   display: flex; align-items: center;
   overflow: hidden;
@@ -178,7 +178,11 @@ nav a:hover { color: var(--rose); }
   position: absolute; inset: 0;
   background-image: url('/images/hero.jpg');
   background-size: cover; background-position: center 30%;
-  opacity: .4;
+}
+.hero-bg::after {
+  content: '';
+  position: absolute; inset: 0;
+  background: linear-gradient(135deg, rgba(140,94,85,.65) 0%, rgba(26,26,26,.55) 100%);
 }
 .hero-content {
   position: relative; z-index: 1;
